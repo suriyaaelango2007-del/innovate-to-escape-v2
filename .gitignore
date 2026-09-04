@@ -1,0 +1,14 @@
+node_modules
+.next
+out
+dist
+tsconfig.tsbuildinfo
+
+# Secrets — never commit any of these. The repo is public.
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.vercel
+next-env.d.ts

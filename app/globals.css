@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: #0a0a0a;
+  color: #f5f5f5;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Pill button base */
+.pill {
+  @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
+}
+
+.pill-primary {
+  @apply pill bg-accent text-black hover:bg-accent-soft shadow-pill;
+}
+
+.pill-ghost {
+  @apply pill bg-bg-card text-white/80 hover:bg-bg-border border border-bg-border;
+}
+
+.pill-outline {
+  @apply pill border border-bg-border text-white/70 hover:text-white hover:border-accent/40;
+}
+
+/* Serif display heading */
+.display {
+  font-family: var(--font-serif), Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+.display em {
+  font-style: italic;
+  color: #facc15;
+  font-weight: 500;
+}
+
+/* Card */
+.card {
+  @apply rounded-2xl border border-bg-border bg-bg-card/70 backdrop-blur-sm;
+}
+
+/* Cosmic starfield container */
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 40% at 10% 0%, rgba(250, 204, 21, 0.06), transparent 60%),
+    radial-gradient(ellipse 50% 40% at 90% 20%, rgba(250, 204, 21, 0.04), transparent 60%),
+    #0a0a0a;
+}
+
+.star {
+  position: absolute;
+  border-radius: 9999px;
+  will-change: transform, opacity;
+}
+
+/* Wordle tile */
+.tile {
+  @apply flex items-center justify-center rounded-lg border font-bold uppercase select-none;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  aspect-ratio: 1 / 1;
+  perspective: 800px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tile-empty {
+  @apply bg-wordle-empty border-wordle-edge text-white/90;
+}
+
+.tile-filled {
+  @apply bg-wordle-empty border-white/30 text-white;
+}
+
+.tile-correct {
+  background-color: #facc15;
+  border-color: #facc15;
+  color: #0a0a0a;
+}
+
+.tile-present {
+  background-color: #78716c;
+  border-color: #78716c;
+  color: #ffffff;
+}
+
+.tile-absent {
+  background-color: #1a1a1a;
+  border-color: #262626;
+  color: #6b6b6b;
+}
+
+/* Keyboard key */
+.kbd {
+  @apply flex items-center justify-center rounded-md font-semibold text-sm uppercase select-none transition-colors;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 3rem;
+  padding: 0 0.15rem;
+  background: #262626;
+  color: #f5f5f5;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.kbd-wide {
+  flex: 1.5 1 0;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+}
+
+@media (min-width: 480px) {
+  .kbd { height: 3.25rem; padding: 0 0.5rem; font-size: 0.875rem; }
+  .kbd-wide { font-size: 0.875rem; }
+}
+
+.kbd:hover {
+  background: #333;
+}
+
+.kbd:active {
+  background: #3a3a3a;
+  transform: scale(0.96);
+}
+
+.kbd-correct {
+  background-color: #facc15;
+  color: #0a0a0a;
+}
+
+.kbd-present {
+  background-color: #78716c;
+  color: #fff;
+}
+
+.kbd-absent {
+  background-color: #0f0f0f;
+  color: #555;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
