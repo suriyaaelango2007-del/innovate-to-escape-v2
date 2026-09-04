@@ -7,9 +7,6 @@ A two-phase Wordle-style challenge for the **Prodinno Club**.
 
 Next.js 14 (App Router) · Tailwind CSS · Supabase · Clerk · Framer Motion · deployed on Vercel.
 
-> **This is a separate project from the original deployment.** It has its own folder and
-> its own GitHub repository. See [§0](#0--before-you-start-read-this) for the one thing
-> that can still affect the old game.
 
 ---
 
